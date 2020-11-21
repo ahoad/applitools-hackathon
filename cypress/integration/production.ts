@@ -1,18 +1,21 @@
-describe("My First Test", () => {
+describe("AppliFashion should be displayed correctly", () => {
   beforeEach(() => {
     cy.visit("tlcHackathonMasterV1.html");
     cy.findByText("HOME").should("be.visible");
   });
 
-  it("main page", () => {
+  it("Main Page", () => {
     cy.eyesOpen({
       testName: "Test 1",
     });
 
-    cy.eyesCheckWindow("main page");
+    cy.eyesCheckWindow({
+      tag: "main page",
+      target: "window",
+    });
   });
 
-  it("filter by color", () => {
+  it("Filtered Product Grid", () => {
     cy.eyesOpen({
       testName: "Test 2",
     });
@@ -23,10 +26,14 @@ describe("My First Test", () => {
       .findAllByRole("img")
       .should("have.length", 2);
 
-    cy.eyesCheckWindow("filter by color");
+    cy.eyesCheckWindow({
+      tag: "filter by color",
+      target: "region",
+      selector: "#product_grid",
+    });
   });
 
-  it("product details", () => {
+  it("Product Details", () => {
     cy.eyesOpen({
       testName: "Test 3",
     });
@@ -34,7 +41,10 @@ describe("My First Test", () => {
     cy.findByText("Appli Air x Night").click();
     cy.findByText("Filter").should("not.be.visible");
 
-    cy.eyesCheckWindow("product details");
+    cy.eyesCheckWindow({
+      tag: "product details",
+      target: "window",
+    });
   });
 
   afterEach(() => {
