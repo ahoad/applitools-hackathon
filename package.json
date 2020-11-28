@@ -4,7 +4,12 @@
   "description": "Using Applitools with Cypress",
   "author": "Amy Hoad",
   "scripts": {
-    "cy:open": "cypress open"
+    "cy:open:part1": "cypress open --env url=tlcHackathonMasterV1.html",
+    "cy:open:part2": "cypress open --env url=tlcHackathonDev.html",
+    "cy:open:part3": "cypress open --env url=tlcHackathonMasterV2.html",
+    "cy:run:part1": "cypress run --env url=tlcHackathonMasterV1.html",
+    "cy:run:part2": "cypress run --env url=tlcHackathonDev.html",
+    "cy:run:part3": "cypress run --env url=tlcHackathonMasterV2.html"
   },
   "devDependencies": {
     "@applitools/eyes-cypress": "^3.15.5",
