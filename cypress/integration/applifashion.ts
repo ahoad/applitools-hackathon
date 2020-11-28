@@ -1,6 +1,6 @@
 describe("AppliFashion should be displayed correctly", () => {
   beforeEach(() => {
-    cy.visit("tlcHackathonDev.html");
+    cy.visit(Cypress.env("url"));
     cy.findByText("HOME").should("be.visible");
   });
 
